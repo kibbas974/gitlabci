@@ -28,10 +28,6 @@ RUN docker-php-ext-configure gd \
         --with-jpeg-dir=/usr/lib \
         --with-freetype-dir=/usr/include/freetype2 && \
     docker-php-ext-install gd
-    
-# Install Xdebug
-RUN pecl install xdebug && docker-php-ext-enable xdebug
-COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 # Install ZIP
 RUN pecl install zip && docker-php-ext-enable zip
