@@ -19,4 +19,4 @@ RUN apt-get update && \
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-RUN apt-get install sshpass
+RUN apt-get install sshpass -y
