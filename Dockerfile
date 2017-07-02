@@ -15,12 +15,6 @@ RUN apt-get update && \
         libssl-dev \
         libmcrypt-dev
 
-# Install the PHP mcrypt extention
-RUN docker-php-ext-install mcrypt
-
-# Install ZIP
-RUN pecl install zip && docker-php-ext-enable zip
-
 # Install composer
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
