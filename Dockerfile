@@ -36,8 +36,4 @@ RUN pecl install zip && docker-php-ext-enable zip
 RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
-RUN apt-get install sshpass && \
-	'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )' \
-	eval $(ssh-agent -s) \
-	mkdir -p ~/.ssh \
-	'[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+RUN apt-get install sshpass
